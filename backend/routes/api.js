@@ -2,17 +2,22 @@
 
 const express = require('express')
 const router = express.Router()
+const Expense = require('../models/expense')
 
-router.get('/expenses', (err, req, res, next) => {
+router.get('/expenses', (req, res, next) => {
+  res.send({ res: 'GET'})
 })
 
-router.post('/expenses', (err, req, res, next) => {
+router.post('/expenses', (req, res, next) => {
+  res.send({ res: 'POST'})
 })
 
-router.put('/expenses/:id', (err, req, res, next) => {
+router.put('/expenses/:id', (req, res, next) => {
+  res.send({ res: 'PUT'})
 })
 
-router.delete('/expenses/:id', (err, req, res, next) => {
+router.delete('/expenses/:id', (req, res, next) => {
+  res.send({ res: 'DELETE'})
 })
 
 module.exports = router

@@ -17,6 +17,6 @@ app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message })
 })
 
-app.listen(4000, () => {
+app.listen(process.env.port || 4000, () => {
   console.log('Server is running on port 4000.')
 })
