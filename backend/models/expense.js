@@ -1,9 +1,11 @@
 'use strict'
 
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
-const ExpenseSchema = new Schema({
+// {type: Schema.Types.ObjectId, ref: 'User'}
+
+var ExpenseSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Name field is required.']
@@ -22,6 +24,6 @@ const ExpenseSchema = new Schema({
   }
 })
 
-const Expense = mongoose.model('expense', ExpenseSchema)
+var Expense = mongoose.model('expense', ExpenseSchema)
 
 module.exports = Expense

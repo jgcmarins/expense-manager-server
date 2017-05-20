@@ -1,10 +1,13 @@
 'use strict'
 
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+var express = require('express')
+var http = require('http')
+var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 
-const app = express()
+const PORT = 4000
+
+var app = express()
 
 mongoose.connect('mongodb://localhost/expense-manager')
 mongoose.Promise = global.Promise
@@ -17,6 +20,10 @@ app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message })
 })
 
-app.listen(process.env.port || 4000, () => {
-  console.log('Server is running on port 4000.')
+app.get('/*', (req, res, next) => {
+  res.status(404).send({ error: '404 - Not Found'})
+})
+
+http.createServer(app).listen(PORT, () => {
+  console.log('Server is running on port ' + PORT + '.')
 })
