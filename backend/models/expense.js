@@ -3,8 +3,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-// {type: Schema.Types.ObjectId, ref: 'User'}
-
 var ExpenseSchema = new Schema({
   name: {
     type: String,

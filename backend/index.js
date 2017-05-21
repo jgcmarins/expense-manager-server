@@ -17,10 +17,10 @@ app.use(bodyParser.json())
 app.use('/api', require('./routes/api'))
 
 app.use((err, req, res, next) => {
-  res.status(422).send({ error: err.message })
+  res.status(422).send({ error: err._message })
 })
 
-app.get('/*', (req, res, next) => {
+app.use((req, res) => {
   res.status(404).send({ error: '404 - Not Found'})
 })
 
