@@ -11,6 +11,14 @@ var UserSchema = new Schema({
   email: {
     type: String,
     required: [true, 'Email field is required']
+  },
+  status: {
+    type: Boolean,
+    default: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 })
 
