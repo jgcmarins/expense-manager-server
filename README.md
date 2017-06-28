@@ -1,5 +1,5 @@
 # expense-manager
-Web app to manage expenses
+NodeJS server that handles expenses
 
 ## How to use
 
